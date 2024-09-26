@@ -4,6 +4,8 @@ import com.aluracursos.screenmatch.modelos.Serie;
 import punto.alura.cursos.screen.match.calculos.CalculadoraDeTiempo;
 import punto.alura.cursos.screen.match.calculos.FiltroRecomendacion;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
         Pelicula miPelicula = new Pelicula();
@@ -11,7 +13,6 @@ public class Principal {
         miPelicula.setFechaDeLanzamiento(2005);
         miPelicula.setDuracionEnMinutos(133);
         miPelicula.setIncluidoEnPlan(true);
-
 
 
         miPelicula.muestraFichaTecnica();
@@ -54,7 +55,22 @@ public class Principal {
 
         filtroRecomendacion.filtra(episodio);
 
+        var peliculaDeMario = new Pelicula();
+        peliculaDeMario.setNombreTitulo("Deadpool");
+        peliculaDeMario.setDuracionEnMinutos(180);
+        peliculaDeMario.setFechaDeLanzamiento(2001);
 
+        ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();
+        listaDePeliculas.add(peliculaDeMario);
+        listaDePeliculas.add(miPelicula);
+        listaDePeliculas.add(otrPelicula);
+
+
+        System.out.println("Tamaño de la lista de peliculas: " + listaDePeliculas.size());
+        System.out.println("La primer pelicual es: " + listaDePeliculas.get(0).getNombreTitulo());
+
+        System.out.println(listaDePeliculas);
+        System.out.println(listaDePeliculas.get(0).toString());
 
     }
 }
