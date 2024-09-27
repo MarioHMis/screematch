@@ -1,3 +1,5 @@
+package principal;
+
 import com.aluracursos.screenmatch.modelos.Episodio;
 import com.aluracursos.screenmatch.modelos.Pelicula;
 import com.aluracursos.screenmatch.modelos.Serie;
@@ -8,9 +10,7 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Pelicula miPelicula = new Pelicula();
-        miPelicula.setNombreTitulo("Virgen a los 40");
-        miPelicula.setFechaDeLanzamiento(2005);
+        Pelicula miPelicula = new Pelicula("Virgen a los 40", 2005);
         miPelicula.setDuracionEnMinutos(133);
         miPelicula.setIncluidoEnPlan(true);
 
@@ -23,18 +23,14 @@ public class Principal {
         System.out.println("El promedio de la pelicula es: " + miPelicula.calculaMedia());
 
 
-        Serie casaDragon = new Serie();
-        casaDragon.setNombreTitulo("La Casa del Dragon");
-        casaDragon.setFechaDeLanzamiento(2022);
+        Serie casaDragon = new Serie("La Casa del Dragon", 2022);
         casaDragon.setTemporadas(1);
         casaDragon.setEpisodiosPorTemporada(10);
         casaDragon.setMinutosPorEpisodio(50);
         casaDragon.muestraFichaTecnica();
         System.out.println(casaDragon.getDuracionEnMinutos());
 
-        Pelicula otrPelicula = new Pelicula();
-        otrPelicula.setNombreTitulo("Matrix");
-        otrPelicula.setFechaDeLanzamiento(1999);
+        Pelicula otrPelicula = new Pelicula("Matrix", 1999);
         otrPelicula.setDuracionEnMinutos(136);
 
 
@@ -55,8 +51,7 @@ public class Principal {
 
         filtroRecomendacion.filtra(episodio);
 
-        var peliculaDeMario = new Pelicula();
-        peliculaDeMario.setNombreTitulo("Deadpool");
+        var peliculaDeMario = new Pelicula("Deadpool", 2001);
         peliculaDeMario.setDuracionEnMinutos(180);
         peliculaDeMario.setFechaDeLanzamiento(2001);
 
@@ -68,9 +63,9 @@ public class Principal {
 
         System.out.println("Tamaño de la lista de peliculas: " + listaDePeliculas.size());
         System.out.println("La primer pelicual es: " + listaDePeliculas.get(0).getNombreTitulo());
-
         System.out.println(listaDePeliculas);
-        System.out.println(listaDePeliculas.get(0).toString());
+        System.out.println("toString de la pelicula: " + listaDePeliculas.get(0).toString());
+
 
     }
 }

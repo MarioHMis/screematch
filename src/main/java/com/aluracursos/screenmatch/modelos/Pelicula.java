@@ -5,6 +5,10 @@ import punto.alura.cursos.screen.match.calculos.Clasificacion;
 public class Pelicula extends Titulo implements Clasificacion {
     String director;
 
+   public Pelicula(String nombreTitulo, int fechaDeLanzamiento) {
+        super(nombreTitulo, fechaDeLanzamiento);
+    }
+
     public String getDirector() {
         return director;
     }
@@ -19,7 +23,7 @@ public class Pelicula extends Titulo implements Clasificacion {
 
     @Override
     public String toString() {
-        return "toString de la Pelicula: " + this.getNombreTitulo() + " (" + getFechaDeLanzamiento() + ")";
+        return "Pelicula: " + this.getNombreTitulo() + " (" + getFechaDeLanzamiento() + ")";
     }
 
 }
