@@ -5,6 +5,7 @@ import com.aluracursos.screenmatch.modelos.Serie;
 import com.aluracursos.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PrincipalConListas {
     public static void main(String[] args) {
@@ -29,7 +30,18 @@ public class PrincipalConListas {
             if (item instanceof Pelicula pelicula && pelicula.getClasificacion() > 3) {
                 System.out.println(pelicula.getClasificacion());
             }
-
         }
+
+
+        ArrayList<String> listaDeArtistas = new ArrayList<>();
+        listaDeArtistas.add("Steve Carell");
+        listaDeArtistas.add("Rayan Gosling");
+        listaDeArtistas.add("Sandra Bullock");
+
+        Collections.sort(listaDeArtistas);
+        System.out.println("Lista ordenada de artistas es: " + listaDeArtistas);
+
+        Collections.sort(list);
+        System.out.println("La lista ordena de pelciulas es: " + list);
     }
 }
