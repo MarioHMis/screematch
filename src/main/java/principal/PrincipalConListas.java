@@ -4,8 +4,7 @@ import com.aluracursos.screenmatch.modelos.Pelicula;
 import com.aluracursos.screenmatch.modelos.Serie;
 import com.aluracursos.screenmatch.modelos.Titulo;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 public class PrincipalConListas {
     public static void main(String[] args) {
@@ -19,7 +18,7 @@ public class PrincipalConListas {
         Serie casaDragon = new Serie("La Casa del Dragon", 2022);
         casaDragon.evaluacionUsuario(3);
 
-        ArrayList<Titulo> list = new ArrayList<>();
+        List<Titulo> list = new LinkedList<>();
         list.add(miPelicula);
         list.add(otrPelicula);
         list.add(peliculaDeMario);
@@ -37,11 +36,15 @@ public class PrincipalConListas {
         listaDeArtistas.add("Steve Carell");
         listaDeArtistas.add("Rayan Gosling");
         listaDeArtistas.add("Sandra Bullock");
+        System.out.println(listaDeArtistas);
 
         Collections.sort(listaDeArtistas);
         System.out.println("Lista ordenada de artistas es: " + listaDeArtistas);
 
         Collections.sort(list);
         System.out.println("La lista ordena de pelciulas es: " + list);
+
+        list.sort(Comparator.comparing(Titulo::getFechaDeLanzamiento));
+        System.out.println("Lista ordenada por fecha: " + list);
     }
 }

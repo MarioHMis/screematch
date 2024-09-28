@@ -12,22 +12,22 @@ public class Principal {
     public static void main(String[] args) {
         Pelicula miPelicula = new Pelicula("Virgen a los 40", 2005);
         miPelicula.setDuracionEnMinutos(133);
-        miPelicula.setIncluidoEnPlan(true);
+        System.out.println("Duración de la película: " + miPelicula.getDuracionEnMinutos());
 
 
         miPelicula.muestraFichaTecnica();
         miPelicula.evaluacionUsuario(10);
         miPelicula.evaluacionUsuario(10);
         miPelicula.evaluacionUsuario(7.8);
-        System.out.println(miPelicula.getTotalDeEvaluacionesUsuario());
+        System.out.println("Total de evaluaciones: " + miPelicula.getTotalDeEvaluacionesUsuario());
         System.out.println("El promedio de la pelicula es: " + miPelicula.calculaMedia());
 
 
         Serie casaDragon = new Serie("La Casa del Dragon", 2022);
+        casaDragon.muestraFichaTecnica();
         casaDragon.setTemporadas(1);
         casaDragon.setEpisodiosPorTemporada(10);
         casaDragon.setMinutosPorEpisodio(50);
-        casaDragon.muestraFichaTecnica();
         System.out.println(casaDragon.getDuracionEnMinutos());
 
         Pelicula otrPelicula = new Pelicula("Matrix", 1999);
@@ -48,7 +48,6 @@ public class Principal {
         episodio.setNombreEpisodio("La casa Targaryen");
         episodio.setSerie(casaDragon);
         episodio.setTotalVisualizaciones(50);
-
         filtroRecomendacion.filtra(episodio);
 
         var peliculaDeMario = new Pelicula("Deadpool", 2001);
